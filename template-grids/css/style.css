@@ -1,0 +1,52 @@
+body {
+	background: url(../img/12_col.gif) center top repeat-y;
+	background-size: 90%;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: 
+	"header header header"
+	"sidebar main1 main2"
+	"footer footer footer";
+	gap: 5px;
+	width: 100%;
+	max-width: 100%;
+	margin: auto;
+}
+
+header {
+	grid-area: header;
+	background-color: pink;
+	padding: 50px;
+	text-align: center;
+	color: black
+}
+
+aside {
+	grid-area: sidebar;
+	background-color: purple;
+	padding: 50px;
+}
+
+.main1 {
+	grid-area: main1;
+	background-color: lightskyblue;
+	padding: 50px;
+}
+
+.main2 {
+	grid-area: main2;
+	background-color: lightgreen;
+	padding: 50px;
+}
+
+footer {
+	grid-area: footer;
+	background-color: brown;
+	padding: 50px;
+	text-align: center;
+	color: black
+}
