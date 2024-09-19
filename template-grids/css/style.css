@@ -86,60 +86,6 @@ body {
 	gap: 100px;
 }
 
-/* Media Query for devices with width less than 768px */
-@media only screen and (max-width: 768px) {
-	body {
-		background-size: 100%;
-	}
-
-	.box-container {
-		grid-template-areas:
-			"header"
-			"box1"
-			"box2"
-			"box3"
-			"content"
-			"sidebar"
-			"footer";
-		grid-template-columns: 1fr; /* Single column layout */
-		grid-template-rows: auto;
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-
-	.header, .box1, .box2, .box3, .content-container, .sidebar, .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
-		padding: 20px; /* Reduced padding for smaller screens */
-		font-size: 14px; /* Larger font size for readability on mobile */
-	}
-
-	.footer {
-		grid-template-columns: 1fr; /* Footer columns collapse into one */
-	}
-}
-
-
-/* Media Query for tablets (768px - 960px) */
-@media only screen and (min-width: 768px) and (max-width: 960px) {
-    .box-container {
-        grid-template-areas:
-            "header header header"
-            "box1 box2 box3"
-            "content sidebar sidebar"
-            "footer footer footer";
-        grid-template-columns: 1fr 2fr; /* Two-column layout for content and sidebar */
-    }
-
-    .footer {
-        grid-template-columns: repeat(2, 1fr); /* Two-column footer layout */
-    }
-
-    .header, .box1, .box2, .box3, .content-container, .sidebar, .footer {
-        padding: 30px;
-        font-size: 14px; /* Slightly larger font for tablets */
-    }
-}
-
-
 /* Media Query for smaller desktop screens (screen width between 960px and 1200px) */
 @media only screen and (min-width: 960px) and (max-width: 1200px) {
 	body {
@@ -179,4 +125,57 @@ body {
 		font-size: 18px; /* Increase footer font size */
 	}
 }
+
+/* Media Query for tablets (768px - 960px) */
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+    .box-container {
+        grid-template-areas:
+            "header header header"
+            "box1 box2 box3"
+            "content sidebar sidebar"
+            "footer footer footer";
+        grid-template-columns: 1fr 2fr; /* Two-column layout for content and sidebar */
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr); /* Two-column footer layout */
+    }
+
+    .header, .box1, .box2, .box3, .content-container, .sidebar, .footer {
+        padding: 30px;
+        font-size: 14px; /* Slightly larger font for tablets */
+    }
+}
+
+/* Media Query for devices with width less than 768px */
+@media only screen and (max-width: 768px) {
+	body {
+		background-size: 100%;
+	}
+
+	.box-container {
+		grid-template-areas:
+			"header"
+			"box1"
+			"box2"
+			"box3"
+			"content"
+			"sidebar"
+			"footer";
+		grid-template-columns: 1fr; /* Single column layout */
+		grid-template-rows: auto;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.header, .box1, .box2, .box3, .content-container, .sidebar, .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
+		padding: 20px; /* Reduced padding for smaller screens */
+		font-size: 14px; /* Larger font size for readability on mobile */
+	}
+
+	.footer {
+		grid-template-columns: 1fr; /* Footer columns collapse into one */
+	}
+}
+
 
