@@ -15,8 +15,8 @@ body {
 	grid-template-columns: 1fr 3fr 1fr 1fr; /* Adjust the columns for the boxes */
 	grid-template-rows: auto auto 1fr auto; /* Adjust rows as needed */
 	gap: 10px; /* Space between grid items */
-	margin-left: 72px;
-	margin-right: 72px;
+	margin-left: 75px;
+	margin-right: 75px;
 	margin-top: 10px;
 }
 
@@ -24,42 +24,48 @@ body {
 	grid-area: header;
 	border: 1px solid #333;
 	padding: 45px;
-	text-align: center;
-	font-size: 24px; /* Make the header large */
+	text-align: left;
+	font-size: 10px; /* Make the header large */
 }
 
 .box1 {
 	grid-area: box1;
 	border: 1px solid #333;
 	padding: 45px;
-	text-align: center;
+	text-align: left;
+	font-size: 10px;
 }
 
 .box2 {
 	grid-area: box2;
 	border: 1px solid #333;
 	padding: 45px;
-	text-align: center;
+	text-align: left;
+	font-size:10px;
 }
 
 .box3 {
 	grid-area: box3;
 	border: 1px solid #333;
 	padding: 45px;
-	text-align: center;
+	text-align: left;
+	font-size: 10px;
 }
 
 .content-container {
 	grid-area: content;
 	border: 1px solid #333;
 	padding: 45px;
-	text-align: center;
+	text-align: left;
+	font-size: 10px;
 }
 
 .sidebar {
 	grid-area: sidebar;
 	border: 1px solid #333;
 	padding: 45px;
+	text-align: left;
+	font-size: 10px;
 }
 
 .footer {
@@ -67,12 +73,169 @@ body {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr); /* Four equal columns for the footer sections */
 	border: 1px solid #333; 
-	padding: 45px;
+	padding: 5px;
 	gap: 10px; /* Space between footer sections */
 }
 
 .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
 	border: 1px solid #333;
-	padding: 45px;
-	text-align: center;
+	text-align: left;
+	padding:  60px;
+	font-size: 10px;
+	gap: 100px;
 }
+
+@media only screen and (max-width: 768px) {
+	body {
+		background-size: 100%;
+	}
+
+	.box-container {
+		grid-template-areas:
+			"header"
+			"box1"
+			"box2"
+			"box3"
+			"content"
+			"sidebar"
+			"footer";
+		grid-template-columns: 1fr; /* Single column layout */
+		grid-template-rows: auto;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.header, .box1, .box2, .box3, .content-container, .sidebar, .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
+		padding: 20px; /* Reduced padding for smaller screens */
+		font-size: 14px; /* Larger font size for readability on mobile */
+	}
+
+	.footer {
+		grid-template-columns: 1fr; /* Footer columns collapse into one */
+	}
+
+}
+
+	/* Media Query for tablets (screen width between 768px and 960px) */
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+	body {
+		background-size: 100%; /* Adjust background size for tablet */
+	}
+
+	.box-container {
+		grid-template-areas:
+			"header header"
+			"box1 box2"
+			"box3 box3"
+			"content content"
+			"sidebar sidebar"
+			"footer footer";
+		grid-template-columns: 1fr 1fr; /* Two-column layout for tablet */
+		grid-template-rows: auto;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	.header {
+		grid-area: header;
+		padding: 30px; /* Adjust padding for tablet */
+		font-size: 18px; /* Slightly larger font */
+	}
+
+	.box1, .box2, .box3, .content-container, .sidebar, .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
+		padding: 30px; /* Adjust padding */
+		font-size: 14px; /* Larger font for tablet readability */
+	}
+
+	.footer {
+		grid-template-columns: 1fr 1fr; /* Footer divided into two columns */
+		gap: 20px;
+	}
+
+	.footer-box1, .footer-box2, .footer-box3, .footer-box4 {
+		padding: 30px; /* Adjust padding */
+		font-size: 14px;
+	}
+}
+
+/* Media Query for smaller desktop screens (screen width between 960px and 1200px) */
+@media only screen and (min-width: 960px) and (max-width: 1200px) {
+	body {
+		background-size: 100%; /* Adjust background size to fit screen */
+	}
+
+	.box-container {
+		grid-template-areas:
+			"header header header header"
+			"box1 box2 box2 box3"
+			"content content sidebar sidebar"
+			"footer footer footer footer";
+		grid-template-columns: 1fr 2fr 2fr 1fr; /* Adjusted column sizes */
+		grid-template-rows: auto; /* Keep rows flexible */
+		gap: 15px; /* Slightly increased gap between grid items */
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+
+	.header {
+		padding: 50px; /* Adjust padding for smaller desktop */
+		font-size: 24px; /* Increase font size slightly */
+	}
+
+	.box1, .box2, .box3, .content-container, .sidebar, .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
+		padding: 50px; /* Increase padding for more space */
+		font-size: 18px; /* Larger font for readability */
+	}
+
+	.footer {
+		grid-template-columns: repeat(4, 1fr); /* Keep four equal footer columns */
+		gap: 20px; /* Adjust gap between footer sections */
+	}
+
+	.footer-box1, .footer-box2, .footer-box3, .footer-box4 {
+		padding: 50px; /* Increased padding in footer sections */
+		font-size: 18px; /* Increase footer font size */
+	}
+}
+
+/* Media Query for larger desktop screens (screen width bigger than 1200px) */
+@media only screen and (min-width: 1200px) {
+	body {
+		background-size: 100%; /* Ensure background covers large screens */
+	}
+
+	.box-container {
+		grid-template-areas:
+			"header header header header"
+			"box1 box2 box2 box3"
+			"content content sidebar sidebar"
+			"footer footer footer footer";
+		grid-template-columns: 1fr 3fr 1fr 1fr; /* Adjust column size for larger screens */
+		grid-template-rows: auto; /* Keep rows flexible */
+		gap: 20px; /* Increase space between grid items */
+		margin-left: 100px; /* More margin for bigger screens */
+		margin-right: 100px;
+	}
+
+	.header {
+		padding: 60px; /* More padding for larger screens */
+		font-size: 32px; /* Increase font size for header */
+	}
+
+	.box1, .box2, .box3, .content-container, .sidebar {
+		padding: 60px; /* Increase padding for larger content areas */
+		font-size: 20px; /* Larger font size for readability on bigger screens */
+	}
+
+	.footer {
+		grid-template-columns: repeat(4, 1fr); /* Keep four equal footer columns */
+		gap: 30px; /* Increase gap between footer sections */
+		padding: 60px; /* Increase overall footer padding */
+	}
+
+	.footer-box1, .footer-box2, .footer-box3, .footer-box4 {
+		padding: 60px; /* More padding for footer boxes */
+		font-size: 20px; /* Larger font size for footer sections */
+	}
+}
+
