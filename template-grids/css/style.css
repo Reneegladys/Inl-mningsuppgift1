@@ -14,49 +14,57 @@ body {
         "footer footer footer footer footer footer footer footer footer footer footer footer";
     width: 90%;
     gap: 15px; 
-    margin: 0 auto;
+    height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .header {
     grid-area: header;
     border: 1px solid #333;
-    padding: 90px;
+    padding: 40px;
     font-size: 15px;
+    height: 200px;
 }
 
 .box1 {
     grid-area: box1;
     border: 1px solid #333;
-    padding: 90px;
+    padding: 40px;
     font-size: 15px;
+    height: 200px;
 }
 
 .box2 {
     grid-area: box2;
     border: 1px solid #333;
-    padding: 90px;
+    padding: 40px;
     font-size: 15px;
+    height: 200px;
 }
 
 .box3 {
     grid-area: box3;
     border: 1px solid #333;
-    padding: 90px;
+    padding: 40px;
     font-size: 15px;
+    height: 200px;
 }
 
 .content-container {
     grid-area: content;
     border: 1px solid #333;
-    padding: 90px;
+    padding: 40px;
     font-size: 15px;
+    height: 200px;
 }
 
 .sidebar {
     grid-area: sidebar;
     border: 1px solid #333;
-    padding: 90px;
+    padding: 40px;
     font-size: 15px;
+    height: 200px;
 }
 
 .footer {
@@ -64,16 +72,65 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr); 
     border: 1px solid #333; 
-    padding: 90px;
     gap: 30px; 
+    padding: 20px;
 }
 
 .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
     border: 1px solid #333;
-    padding: 90px;
     font-size: 15px;
     grid-column: span 3; 
-	gap: 90px;
+	gap: 10px;
+    height: 200px;
+}
+
+/* Media query for larger desktop screens (greater than 1200px) */
+@media only screen and (min-width: 1200px) {
+    .box-container {
+        width: 90%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header, .box1, .box2, .box3, .content-container, .sidebar {
+        padding: 50px; 
+        font-size: 18px; 
+        gap: 10px
+    }
+
+    .box1 {
+        grid-column: span 2;
+    }
+
+    .box2 {
+        grid-column: span 8;
+    }
+
+    .box3 {
+        grid-column: span 2;
+    }
+
+    .content-container {
+        grid-column: span 9;
+    }
+
+    .sidebar {
+        grid-column: span 3;
+    }
+
+    .footer {
+        grid-template-columns: repeat(12, 1fr); /* 12 columns grid */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .footer-box1, .footer-box2, .footer-box3, .footer-box4 { 
+        width: 200px;
+        grid-column: span 3;
+        gap: 20px;
+        padding: 20px;
+
+    }
 }
 
 /* Media Query for smaller desktop screens between 1200px and 960px */
@@ -86,51 +143,58 @@ body {
             "footer footer footer footer footer footer footer footer footer footer footer footer";
         grid-template-columns: repeat(12, 1fr); 
         gap: 10px; 
-        margin-left: 55px;
-        margin-right: 55px;
+        margin-left: 50px;
+        margin-right: 50px;
 		margin-top: 10px;
     }
 
     .header {
-        padding: 65px; 
+        padding: 20px; 
         font-size: 15px; 
     }
 
     
     .box1 {
-        grid-column: span 4; 
+        grid-column: span 3; 
         padding: 30px;
         font-size: 15px;
     }
 
     .box2 {
-        grid-column: span 4; 
+        grid-column: span 6; 
         padding: 30px;
         font-size: 15px;
     }
 
     .box3 {
-        grid-column: span 4; 
+        grid-column: span 3; 
         padding: 30px;
         font-size: 15px;
     }
 
-    .content-container, .sidebar {
+    .content-container {
+        grid-column: span 8;
+        font-size: 15px;
+        padding: 30px;
+    }
+    
+    .sidebar {
         padding: 30px;
         font-size: 15px;
+        grid-column: span 4;
     }
 
     .footer {
         grid-area: footer;
         grid-template-columns: repeat(12, 1fr); 
-        gap: 10px;
+        gap: 20px;
+        padding: 15px;
     }
 
     .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
         grid-column: span 3; 
-        padding: 30px;
         font-size: 15px;
-		gap: 5px;
+		gap: 20px;
     }
 }
 
@@ -179,12 +243,12 @@ body {
 
     .footer {
         grid-template-columns: repeat(6, 1fr); 
-        gap: 10px; 
+        gap: 15px; 
     }
 
     .footer-box1, .footer-box2, .footer-box3, .footer-box4 {
         grid-column: span 3; 
-        padding: 20px;
+        padding: 2px;
         font-size: 15px; 
     }
 }
